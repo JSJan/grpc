@@ -2,7 +2,7 @@ syntax="proto3";
 
 package building;
 
-option go_package =/Users/janani/Work/GitHub/grpc/go.mod
+option go_package = "github.com/353solutions/building/pb";
 
 message Building {
     string name = 1;
