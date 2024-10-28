@@ -1,21 +1,11 @@
 
-go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
-
-Run the protoc command to generate Go code from your .proto file
-protoc --go_out=. example.proto
-
-
-**Error encountered **
+Error encountered while running
 
 protocol_buffer % protoc --go_out=. building.proto
+
 building.proto:3:1: Expected ";".
-
-protocol_buffer % protoc --go_out=. building.proto
 building.proto:4:16: Missing field number.
-building.proto:5:16: Missing field number.
-building.proto:6:20: Missing field number.
 
-protocol_buffer % protoc --go_out=. building.proto
 building.proto:6:14: "string" is already defined in "Building".
 building.proto:4:5: "name" is not defined.
 building.proto:5:5: "area" is not defined.
