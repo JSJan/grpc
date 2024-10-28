@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package building;
+
+option go_package =/Users/janani/Work/GitHub/grpc/go.mod
+
+message Building {
+    string name = 1;
+    int32 area = 2;
+    string timezone = 3;
+}
