@@ -5,17 +5,17 @@ Run the protoc command to generate Go code from your .proto file
 protoc --go_out=. example.proto
 
 
-Error encountered 
+**Error encountered **
 
-janani@MACJ26YK143F7 protocol_buffer % protoc --go_out=. building.proto
+protocol_buffer % protoc --go_out=. building.proto
 building.proto:3:1: Expected ";".
 
-janani@MACJ26YK143F7 protocol_buffer % protoc --go_out=. building.proto
+protocol_buffer % protoc --go_out=. building.proto
 building.proto:4:16: Missing field number.
 building.proto:5:16: Missing field number.
 building.proto:6:20: Missing field number.
 
-janani@MACJ26YK143F7 protocol_buffer % protoc --go_out=. building.proto
+protocol_buffer % protoc --go_out=. building.proto
 building.proto:6:14: "string" is already defined in "Building".
 building.proto:4:5: "name" is not defined.
 building.proto:5:5: "area" is not defined.
@@ -28,7 +28,7 @@ message Building {
     timezone string=3;
 }
 
-janani@MACJ26YK143F7 protocol_buffer % protoc --go_out=. building.proto
+protocol_buffer % protoc --go_out=. building.proto
 protoc-gen-go: unable to determine Go import path for "building.proto"
 
 Please specify either:
