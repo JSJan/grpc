@@ -1,45 +1,28 @@
-package client
+package main
 
 import (
-	"context"
+	"fmt"
 	"log"
-	"net"
 
 	"github.com/353solutions/building/pb"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/reflection"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {
-	addr := ":9292"
+	addr := "localhost:9292"
+	creds := insecure.NewCredentials()
 
-	lis, err := net.Listen("tcp", addr)
-
+	conn, err := grpc.NewClient(
+		addr,
+		grpc.WithTransportCredentials(creds),
+	)
 	if err != nil {
-		log.Fatalf("error: can't listen - %s", err)
+		log.Fatalf("error: %s", err)
 	}
+	defer conn.Close()
 
-	srv := grpc.NewServer()
-	var u Buildings
-	pb.RegisterBuildingServiceServer(srv, &u)
-	reflection.Register(srv)
-
-	log.Printf("info: server ready on %s", addr)
-	if err := srv.Serve(lis); err != nil {
-		log.Fatalf("error: can't serve - %s", err)
-	}
-}
-
-func (r *Buildings) Start(ctx context.Context, req *pb.StartRequest) (*pb.StartResponse, error) {
-	// TODO: Validate req
-	resp := pb.StartResponse{
-		Id: req.Id,
-	}
-
-	// TODO: Work (insert to database ...)
-	return &resp, nil
-}
-
-type Buildings struct {
-	pb.UnimplementedBuildingServiceServer
+	log.Printf("info: connected to %s", addr)
+	c := pb.NewBuildingServiceClient(conn)
+	fmt.Println(&c)
 }
