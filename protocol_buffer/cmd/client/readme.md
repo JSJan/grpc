@@ -1,12 +1,12 @@
 
-grpc client
+Grpc Client
+-
 
-//Create credentials 
-//insecure new credentails 
+- Create credentials - insecure new credentails 
 
-//create a connection 
-//Defer closing the client 
+- Establish a connection 
+- Defer closing the client 
 
-//print that you are connected to the server 
+- Print that you are connected to the server 
 
-//dial contexts , you can specify how time you want the server to connected
+- Using dial contexts , you can specify how much time you want the server to connected
