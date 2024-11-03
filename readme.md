@@ -31,3 +31,9 @@ See https://protobuf.dev/reference/go/go-generated#package for more information.
 protoc --go_out=. --go_opt=paths=source_relative --go_opt=Mbuilding.proto=github.com/jsjan/yourproject/building building.proto
 
 go generate - take the input commands from gen.go
+
+
+cmd 
+-> client
+-> server
+-> marshal data (protocol buffer)

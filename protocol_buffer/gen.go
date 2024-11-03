@@ -14,3 +14,6 @@ See more at https://grpc.io/docs/languages/go/quickstart/
 
 //go:generate mkdir -p pb
 //go:generate protoc --go_out=pb --go_opt=paths=source_relative ./building.proto
+
+//have added the go grpc out here
+//go:generate protoc --go_out=pb --go_opt=paths=source_relative --go-grpc_out=pb --go-grpc_opt=paths=source_relative ./building.proto
