@@ -9,6 +9,9 @@ Server
 
 Result
 -
+cd protocol_buffer
+cd cmd
+cd request
 `
 request % go run main.go
 name:"test"  area:10  timezone:"asia/calcutta"
